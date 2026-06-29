@@ -1,0 +1,54 @@
+@use "../globals" as *;
+@use "../Base/base" as *;
+
+.footer {
+    padding-bottom: 20px;
+    color: $cWhite;
+    background-color: black;
+    &__container {
+        @extend .content-width;
+        @extend .flex;
+        @extend .mb-sm;
+        align-items: center;
+        justify-content: space-between;
+        color: $cWhite;
+    }
+    &__nav {
+        @extend .flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__ul {
+        @extend .flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    &__li {
+        display: inline-block;
+        padding: 8px;
+        color: $cWhite;
+        padding: 10px;
+        margin: 5px;
+        @extend .font-sm;
+        @include mq(md) {
+            margin: 10px;
+        }
+        transition: all 0.3s;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+    &__copylight {
+        font-size: 12px;
+        margin-top: 40px;
+    }
+}
+.logo {
+    width: 100px;
+    height: auto;
+    @include mq(md) {
+        width: 150px;
+    }
+}

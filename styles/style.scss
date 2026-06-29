@@ -1,0 +1,14 @@
+// @use "loader" as *;
+
+@use "Layout/footer";
+@use "Layout/header";
+@use "Layout/loader";
+@use "Layout/slider";
+@use "Layout/text";
+@use "Layout/btn";
+@use "Layout/form";
+@use "Layout/confirmation";
+
+@use "Pages/main";
+@use "Utils/animations";
+@use "Base/base";

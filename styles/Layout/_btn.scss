@@ -1,0 +1,69 @@
+@use "../globals" as *;
+@use "../Base/base" as *;
+
+.btn {
+    @extend .font-md;
+    background-color: $cWhite;
+    border: 2px solid $cBlack;
+    color: $cBlack;
+    margin: 50px 0;
+    padding: 13px 34px;
+    font-weight: 600;
+    transition: all 0.3s;
+    z-index: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    &.slid-bg {
+        position: relative;
+        overflow: hidden;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            border: 2px solid $cBlack;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-100%);
+            transition: transform 0.3s;
+            z-index: -1;
+        }
+        &:hover {
+            color: $cWhite;
+            &::before {
+                transform: none;
+            }
+        }
+    }
+    &.reverse-slid-bg {
+        position: relative;
+        overflow: hidden;
+        background-color: $cBlack;
+        color: $cWhite;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-color: $cWhite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-100%);
+            transition: transform 0.3s;
+            z-index: -1;
+        }
+
+        &:hover {
+            color: $cBlack;
+            box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+
+            &::before {
+                transform: none;
+            }
+        }
+    }
+}

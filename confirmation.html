@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Portfolio de Sayaka</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&family=Noto+Sans+JP:wght@500&display=swap"
+			rel="stylesheet">
+
+		<link rel="stylesheet" href="./styles/style.css">
+	</head>
+
+	<body>
+
+		<div id="globalContainer">
+			<div class="confirm">
+				<header>
+					<div class="header__inner">
+						<div></div>
+						<nav class="header__nav">
+							<ul class="header__ul">
+								<li><a class="header__li" href="index.html">Home</a></li>
+								<li><a class="header__li" href="index.html#about">About </a></li>
+								<li><a class="header__li" href="index.html#works">Works</a></li>
+								<li><a class="header__li" href="jp.html?lang=jp">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" width="36"
+											height="24">
+											<rect fill="#7f7f7f" width="36" height="24" stroke="#000000"
+												stroke-width="1" />
+											<circle fill="#d52b1e" cx="18" cy="12" r="6" />
+										</svg>
+									</a></li>
+							</ul>
+							<div class="header__btn">
+								<a class="header__a btn reverse-slid-bg confirm__li"
+									href="index.html#contact">Contact</a>
+							</div>
+
+						</nav>
+
+						<button class="menuMobile__btn">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+
+					</div>
+
+
+				</header>
+				<main class="confirm__main">
+
+					<div id="confirmation" class="confirmation">
+						<div class="confirmation__box">
+							<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+
+								<circle cx="50" cy="50" r="45" stroke="green" stroke-width="4" fill="none" />
+
+								<path d="M30 50 L45 65 L70 35" stroke="green" stroke-width="6" fill="none" />
+							</svg>
+							<h1 class="tween-animate animate-title confirmation__text">
+								Votre message a été envoyé !
+							</h1>
+							<p class="sub-title confirmation__p">
+								Je vous remercie sincèrement<br> et <br>je vous répondrai dans
+								les plus brefs
+								délais.
+							</p>
+							<button id="reloadBtn" class="confirmation__btn btn">OK</button>
+						</div>
+					</div>
+				</main>
+				<footer class="footer">
+					<div class="footer__container">
+						<img src="img/logoF.webp" alt="SV,développeuse web" class="logo">
+						<nav class="footer__nav">
+							<ul class="footer__ul">
+								<li><a class="footer__li confirm__li" href="index.html">Top</a></li>
+								<li><a class="footer__li confirm__li" href="about">About </a></li>
+								<li><a class="footer__li confirm__li" href="#">Works</a></li>
+								<li><a class="footer__li confirm__li" href="">Contact</a></li>
+							</ul>
+
+						</nav>
+
+					</div>
+					<div class="footer__copylight">
+						&copy; Sayaka VINCENT
+					</div>
+				</footer>
+			</div>
+
+		</div>
+
+		<script src="scripts/scroll.js"></script>
+		<script src="scripts/textAnimation.js"></script>
+		<script src="scripts/confirmation.js"></script>
+
+		<script src="./main.js"></script>
+	</body>
+
+</html>

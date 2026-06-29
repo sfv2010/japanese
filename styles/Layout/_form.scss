@@ -1,0 +1,81 @@
+@use "../globals" as *;
+@use "../Base/base" as *;
+
+.contact {
+    @extend .mb-lg;
+    // background-color: #fffdfa;
+    // background-color: #ffead5;
+    background-color: #fff5e0;
+    border-radius: 10px;
+    padding: 50px 0 10px;
+
+    &__title {
+        margin: 60px 0 30px;
+    }
+    &__p {
+        margin-bottom: 80px;
+        font-weight: 300;
+    }
+
+    &__form {
+        @extend .flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 70px auto;
+        @include mq(md) {
+            width: 460px;
+        }
+        @include mq(lg) {
+            width: 700px;
+        }
+    }
+    &__item {
+        @extend .flex;
+        flex-direction: column;
+
+        margin-bottom: 40px;
+        @include mq(md) {
+            display: block;
+        }
+    }
+    &__label {
+        text-align: left;
+        width: 100px;
+        margin: 10px 0;
+        border-left: 3px solid $colorPrimary;
+        padding-left: 10px;
+        @include mq(md) {
+            float: left;
+        }
+    }
+
+    &__inputs {
+        border: 2px solid $cBlack;
+        width: 280px;
+        padding: 15px;
+        border-radius: 5px;
+        @include mq(md) {
+            width: 400px;
+        }
+    }
+
+    & textarea {
+        border: 2px solid $cBlack;
+        border-radius: 5px;
+        padding: 10px;
+        height: 150px;
+        width: 280px;
+        font-size: 15px;
+        @include mq(md) {
+            height: 200px;
+            width: 400px;
+        }
+    }
+}
+
+.jp {
+    &__label {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,34 @@
+@use "../globals" as *;
+
+.animate-title,
+.tween-animate {
+    opacity: 0;
+
+    &.inview {
+        opacity: 1;
+
+        & .char {
+            display: inline-block;
+        }
+    }
+
+    & .char {
+        opacity: 0;
+    }
+}
+
+.animate-title.inview .char {
+    display: inline-block;
+    @include animation(
+        $name: animate-chars,
+        $duration: 0.5s,
+        $timing-function: cubic-bezier(0.39, 1.57, 0.58, 1),
+        $fill-mode: both
+    );
+
+    @for $i from 1 through 50 {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * 0.04s;
+        }
+    }
+}

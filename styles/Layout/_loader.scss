@@ -1,0 +1,77 @@
+@use "../globals" as *;
+
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: $color2;
+    @include flex(center);
+    align-items: center;
+    @include animation($name: loaderBack, $duration: 3s);
+    opacity: 0;
+
+    &__bloc {
+        margin: auto;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        letter-spacing: -2px;
+        & > div {
+            width: 6px;
+            height: 50px;
+            display: inline-block;
+            @include animation(
+                $name: loader,
+                $duration: 3s,
+                $iteration-count: 2,
+                $timing-function: ease-in-out
+            );
+            //一つ一つのdivに差をつける
+            @for $i from 1 through 6 {
+                &:nth-child(#{$i}) {
+                    animation-delay: -3.1s +
+                        $i *
+                        0.2s; //ローダーを作る場合、-マイナスから始めないと歪になる。マイナスをつけることによって、アニメーションが始まっている状態から始められるのでスムーズ
+                }
+            }
+            &:nth-child(-n + 2) {
+                background-color: $colorPrimary;
+            }
+            &:nth-child(n + 3) {
+                background-color: $colorSecondary;
+            }
+            &:nth-child(n + 5) {
+                background-color: $colorTertiary;
+            }
+        }
+    }
+}
+// // loading-spinner
+// @keyframes loader {
+//     0%,
+//     40%,
+//     100% {
+//         transform: scaleY(0.4);
+//     }
+//     20% {
+//         transform: scaleY(1);
+//     }
+// }
+
+// @keyframes loaderback {
+//     0% {
+//         opacity: 1;
+//     }
+//     50% {
+//         opacity: 0.9;
+//     }
+//     100% {
+//         opacity: 0;
+//         z-index: -1;
+//     }
+// }
