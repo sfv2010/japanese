@@ -1,19 +1,19 @@
 // variable
+@use "sass:color";
+$colorPrimary: #9d3f52;
+$colorSecondary: #3d7d83;
+$colorTertiary: #d7b46a;
 
-$colorPrimary: #884898;
-$colorSecondary: #a2aad4;
-$colorTertiary: #be9fb2;
-
-$colorPrimaryLight: lighten($colorPrimary, 33%);
-$colorTertiarydark: darken($colorTertiary, 50%);
+$colorPrimaryLight: color.adjust($colorPrimary, $lightness: 33%);
+$colorTertiarydark: color.adjust($colorTertiary, $lightness: -50%);
 $color1: black;
-$color1light: lighten($color1, 20%);
+$color1light: color.adjust($color1, $lightness: 20%);
 $color2: #fff;
 $color3: #f2f2f2;
 $cWhite: white;
 $cBlack: black;
 $cSubTitle: #535353;
-$cBgGray: #eaebe6;
+$cBgGray: #f7f2ea;
 $cWineRed: #904669;
 $contentMaxWidth: 1070px;
 $navHeight: 80px;

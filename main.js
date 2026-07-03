@@ -11,4 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         el.classList.toggle("inview", inview);
     };
     const so2 = new ScrollObserver(".coverSlide", _inviewAnimation);
+
+    const fadeInAnimation = function (el, inview) {
+        el.classList.toggle("show", inview);
+    };
+    const so3 = new ScrollObserver(".scroll-fadein", fadeInAnimation);
 });

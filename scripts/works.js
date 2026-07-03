@@ -1,114 +1,122 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const worksContainer = document.getElementById("works-container");
+  const worksContainer = document.getElementById("works-container");
 
-    // URLから言語情報を取得
-    const urlParams = new URLSearchParams(window.location.search);
-    const language = urlParams.get("lang") || "fr"; // デフォルトはフランス語
+  if (!worksContainer) {
+    return;
+  }
 
-    // 言語に応じたコンテンツ
-    const items = {
-        fr: [
-            {
-                title: "Application de gestion des employés",
-                imageUrl: "img/HRnet.webp",
-                imageAlt: "site avec formulaire",
-                linkUrl: "https://p14-wh.vercel.app/",
-            },
-            {
-                title: "Site du restaurant",
-                imageUrl: "img/ohmy.webp",
-                imageAlt: "site avec photo de plat",
-                linkUrl: "https://sfv2010.github.io/Projet3-ohmyfood/",
-            },
-            {
-                title: "Site du café",
-                imageUrl: "img/sayacafe.webp",
-                imageAlt: "site avec photo de café",
-                linkUrl: "https://sfv2010.github.io/site_sayacafe/",
-            },
-            {
-                title: "Site d'échange de cours de français et de japonais",
-                imageUrl: "img/bubble.webp",
-                imageAlt: "site avec photo de france et japon",
-                linkUrl:
-                    "https://www.loom.com/share/b482f0cfe1104766adaa8103daad4972?sid=839b0ca0-f5a6-434f-b5cd-ead875991f1b",
-            },
-            {
-                title: "Site du location d'hébergement",
-                imageUrl: "img/kasa.webp",
-                imageAlt: "site avec photo d'hébergement ",
-                linkUrl: "https://kasa-p11-55sfv5m0w-sfv2010.vercel.app/",
-            },
-        ],
-        jp: [
-            {
-                title: "従業員管理アプリケーション",
-                imageUrl: "img/HRnet.webp",
-                imageAlt: "フォーム付きサイト",
-                linkUrl: "https://p14-wh.vercel.app/",
-            },
-            {
-                title: "レストランのサイト",
-                imageUrl: "img/ohmy.webp",
-                imageAlt: "料理の写真付きサイト",
-                linkUrl: "https://sfv2010.github.io/Projet3-ohmyfood/",
-            },
-            {
-                title: "カフェのサイト",
-                imageUrl: "img/sayacafe.webp",
-                imageAlt: "カフェの写真付きサイト",
-                linkUrl: "https://sfv2010.github.io/site_sayacafe/",
-            },
-            {
-                title: "フランス語と日本語の交換サイト",
-                imageUrl: "img/bubble.webp",
-                imageAlt: "フランスと日本の写真付きサイト",
-                linkUrl:
-                    "https://www.loom.com/share/b482f0cfe1104766adaa8103daad4972?sid=839b0ca0-f5a6-434f-b5cd-ead875991f1b",
-            },
+  const urlParams = new URLSearchParams(window.location.search);
+  const language =
+    urlParams.get("lang") || document.documentElement.lang || "fr";
 
-            {
-                title: "宿泊施設予約サイト",
-                imageUrl: "img/kasa.webp",
-                imageAlt: "宿泊施設の写真付きサイト",
-                linkUrl: "https://kasa-p11-55sfv5m0w-sfv2010.vercel.app/",
-            },
-        ],
-    };
+  const childLessons = [
+    {
+      title: "幼児向けレッスン",
+      description:
+        "ぬいぐるみ、ゲーム、歌、やりとりを使いながら、とにかく楽しく日本語にふれるクラスです。",
+      price: "25分 - 20ユーロ",
+      imageUrl: "img/love.webp",
+      imageAlt: "花柄の背景にハートのリボン",
+    },
+    {
+      title: "子供向けレッスン",
+      description:
+        "年齢や興味に合わせて、聞く・話す・読む力を少しずつ育て、日本語を好きになる時間を作ります。",
+      price: "25分 - 20ユーロ",
+      imageUrl: "img/jp.svg",
+      imageAlt: "日本を表すアイコン",
+    },
+    {
+      title: "幼児・子供向け特別クラス",
+      description:
+        "学校、家庭での日本語、季節のテーマなど、一人ひとりの目的に合わせた特別カリキュラムです。",
+      price: "25分 - 20ユーロ",
+      imageUrl: "img/mado1.jpg",
+      imageAlt: "日本のお寺の窓",
+    },
+    {
+      title: "会話・発音クラス",
+      description:
+        "日本語の音、リズム、短い会話を中心に、楽しく声に出しながら話す自信を育てます。",
+      price: "25分 - 20ユーロ",
+      imageUrl: "img/bubble.webp",
+      imageAlt: "フランスと日本の会話イメージ",
+    },
+  ];
 
-    const selectedItems = items[language] || items["fr"]; // 言語が無い場合、デフォルトはフランス語
+  const items = {
+    fr: [
+      {
+        title: "Japonais adulte",
+        description:
+          "Un cours personnalisé pour apprendre avec plaisir, aimer davantage le japonais et parler avec confiance.",
+        price: "50 min - 25 €",
+        imageUrl: "img/jp.svg",
+        imageAlt: "Symbole japonais",
+      },
+      {
+        title: "Tout-petits et enfants",
+        description:
+          "Des leçons ludiques avec peluches, jeux, chansons et échanges simples pour découvrir le japonais en s'amusant.",
+        price: "25 min - 20 €",
+        imageUrl: "img/love.webp",
+        imageAlt: "Ruban en forme de coeur sur un fond fleuri",
+      },
+      {
+        title: "Classe spéciale enfants",
+        description:
+          "Un curriculum adapté à l'âge, aux intérêts et au rythme de chaque enfant, avec français ou immersion en japonais.",
+        price: "25 min - 20 €",
+        imageUrl: "img/mado1.jpg",
+        imageAlt: "Fenetre d'un temple japonais",
+      },
+      {
+        title: "Conversation et prononciation",
+        description:
+          "Un cours ciblé pour travailler les sons, le rythme, les petites conversations et l'aisance à l'oral.",
+        price: "Adultes : 50 min - 25 € / Enfants : 25 min - 20 €",
+        imageUrl: "img/bubble.webp",
+        imageAlt: "Illustration de conversation entre la France et le Japon",
+      },
+    ],
+    ja: childLessons,
+    jp: childLessons,
+  };
 
-    selectedItems.forEach((item) => {
-        const worksItem = document.createElement("li");
-        worksItem.classList.add("works__item");
+  const selectedItems = items[language] || items.fr;
 
-        const coverSlide = document.createElement("div");
-        coverSlide.classList.add("coverSlide", "hoverDarken");
+  selectedItems.forEach((item) => {
+    const worksItem = document.createElement("li");
+    worksItem.classList.add("works__item", "lesson-card");
 
-        const imgLink = document.createElement("a");
-        imgLink.href = item.linkUrl;
-        imgLink.target = "_blank";
+    const imageWrap = document.createElement("div");
+    imageWrap.classList.add("lesson-card__image");
 
-        const img = document.createElement("img");
-        img.src = item.imageUrl;
-        img.alt = item.imageAlt;
-        img.classList.add("imgZoom");
+    const img = document.createElement("img");
+    img.src = item.imageUrl;
+    img.alt = item.imageAlt;
+    img.classList.add("imgZoom");
 
-        imgLink.appendChild(img);
-        coverSlide.appendChild(imgLink);
-        worksItem.appendChild(coverSlide);
+    imageWrap.appendChild(img);
+    worksItem.appendChild(imageWrap);
 
-        const titleLink = document.createElement("a");
-        titleLink.href = item.linkUrl;
-        titleLink.target = "_blank";
+    const worksTitle = document.createElement("h3");
+    worksTitle.classList.add("works__title");
+    worksTitle.textContent = item.title;
+    worksItem.appendChild(worksTitle);
 
-        const worksTitle = document.createElement("p");
-        worksTitle.classList.add("works__title");
-        worksTitle.textContent = item.title;
+    const worksDescription = document.createElement("p");
+    worksDescription.classList.add("lesson-card__text");
+    worksDescription.textContent = item.description;
+    worksItem.appendChild(worksDescription);
 
-        titleLink.appendChild(worksTitle);
-        worksItem.appendChild(titleLink);
+    if (item.price) {
+      const worksPrice = document.createElement("p");
+      worksPrice.classList.add("lesson-card__price");
+      worksPrice.textContent = item.price;
+      worksItem.appendChild(worksPrice);
+    }
 
-        worksContainer.appendChild(worksItem);
-    });
+    worksContainer.appendChild(worksItem);
+  });
 });

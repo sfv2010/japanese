@@ -1,43 +1,79 @@
-//テキストが1文字づつ現れるアニメーション
-// 共通のアニメーション関数
-function animateText(element, text, delay = 200, initialDelay = 0, callback) {
-    let index = 0;
+function animateText(element, text, delay = 80, initialDelay = 300, callback) {
+  let index = 0;
+  element.textContent = "";
 
-    function animate() {
-        if (index < text.length) {
-            const char = text.charAt(index); //JSの文字列メソッドで、指定されたインデックスの位置にある文字を返す。
-            const span = document.createElement("span"); //envelopper chaque caractère dans un élément span
-            span.textContent = char;
-            span.style.transition = "opacity 0.4s ease-in-out";
-            span.style.opacity = 0;
-            element.appendChild(span);
-            index++;
+  function animate() {
+    if (index < text.length) {
+      const char = text.charAt(index);
+      const span = document.createElement("span");
+      span.textContent = char;
+      span.style.opacity = 0;
+      span.style.transition = "opacity 0.4s ease-in-out";
+      element.appendChild(span);
+      index++;
 
-            setTimeout(() => {
-                span.style.opacity = 1;
-            }, 50);
+      setTimeout(() => {
+        span.style.opacity = 1;
+      }, 50);
 
-            setTimeout(animate, delay); //caractère suivant
-        } else if (callback) {
-            callback();
-        }
+      setTimeout(animate, delay);
+    } else if (callback) {
+      callback();
     }
+  }
 
-    setTimeout(() => {
-        element.style.display = "block";
-        animate();
-    }, initialDelay);
+  setTimeout(animate, initialDelay);
 }
 
-// HTML要素の取得
 const nameElement = document.querySelector(".textAnimationName");
 const textElement = document.querySelector(".textAnimation");
+const urlParams = new URLSearchParams(window.location.search);
+const pageLanguage =
+  urlParams.get("lang") || document.documentElement.lang || "fr";
 
-// アニメーションテキスト
-const nameText = "Sayaka DEV";
-const text = "Développeuse Web";
+const heroText = {
+  fr: {
+    name: "    Apprendre le japonais ",
+    text: "avec une professeure native japonaise.",
+  },
+  ja: {
+    name: "日本語を、楽しく学ぶ",
+    text: "日本語がもっと好きになり、自信を持って話せるオンラインレッスン。",
+  },
+  jp: {
+    name: "日本語を、楽しく学ぶ",
+    text: "日本語がもっと好きになり、自信を持って話せるオンラインレッスン。",
+  },
+};
 
-// Sayaka VINCENTのアニメーションを開始し、完了後にDéveloppeuse Webのアニメーションを開始
-animateText(nameElement, nameText, 200, 2000, () => {
-    animateText(textElement, text, 150);
-});
+const selectedText = heroText[pageLanguage] || heroText.fr;
+
+function prepareFadeText() {
+  if (!textElement) {
+    return;
+  }
+
+  textElement.classList.remove("show");
+  textElement.classList.add("fadein");
+  textElement.textContent = selectedText.text;
+}
+
+function showFadeText() {
+  if (!textElement) {
+    return;
+  }
+
+  void textElement.offsetHeight;
+
+  setTimeout(() => {
+    textElement.classList.add("show");
+  }, 160);
+}
+
+prepareFadeText();
+
+if (nameElement) {
+  animateText(nameElement, selectedText.name, 80, 300, showFadeText);
+} else {
+  showFadeText();
+}

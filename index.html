@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio de Sayaka</title>
+    <title>Cours de japonais en ligne | Sayaka</title>
     <meta
       name="description"
-      content="Bienvenue sur le site portfolio de Sayaka. Découvrez mes projets, mes compétences et mon parcours."
+      content="Cours de japonais en ligne en français, personnalisés selon votre niveau et vos objectifs : conversation, grammaire, culture japonaise, voyage et préparation JLPT."
     />
+    <link rel="stylesheet" href="./styles/vendors/reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" href="img/icon.svg" type="image/svg+xml" />
@@ -15,253 +16,280 @@
       href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&family=Noto+Sans+JP:wght@500&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
-    <div class="loader">
-      <div class="loader__bloc">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div id="globalContainer">
-      <div id="container">
-        <div class="menuMobile__cover"></div>
+    <div id="container">
+      <div class="menuMobile__cover"></div>
 
-        <header class="header">
-          <div class="header__inner">
-            <img
-              src="img/logoH.webp"
-              alt="SV,développeuse web"
-              class="header__logo"
-            />
+      <header class="header">
+        <div class="header__inner">
+          <img
+            src="img/logoH.webp"
+            alt="Logo Sayaka, cours de japonais"
+            class="header__logo"
+          />
+          <h1 class="header__title">
+            Cours de japonais <br /><span>avec Sayaka</span>
+          </h1>
 
-            <nav class="header__nav">
-              <ul class="header__ul">
-                <li><a class="header__li" href="index.html">Home</a></li>
-                <li><a class="header__li" href="#about">About </a></li>
-                <li><a class="header__li" href="#works">Works</a></li>
-                <li>
-                  <a
-                    class="header__li"
-                    href="jp.html?lang=jp"
-                    aria-label="Passer à la version japonaise"
+          <nav class="header__nav">
+            <ul class="header__ul">
+              <li><a class="header__li" href="index.html">Accueil</a></li>
+              <li><a class="header__li" href="#about">Professeur</a></li>
+              <li><a class="header__li" href="#works">Cours</a></li>
+              <li>
+                <a
+                  class="header__li"
+                  href="jp.html?lang=jp"
+                  aria-label="Passer à la version japonaise"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 36 24"
+                    width="36"
+                    height="24"
+                    role="img"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 36 24"
+                    <title>Drapeau japonais</title>
+                    <rect
+                      fill="#ffffff"
                       width="36"
                       height="24"
-                      role="img"
-                    >
-                      <title>Drapeau japonais</title>
-                      <rect
-                        fill="#ffffff"
-                        width="36"
-                        height="24"
-                        stroke="#000000"
-                        stroke-width="1"
-                      />
-                      <circle fill="#d52b1e" cx="18" cy="12" r="6" />
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <div class="header__btn">
-                <a class="header__a btn reverse-slid-bg" href="#contact"
-                  >Contact</a
+                      stroke="#000000"
+                      stroke-width="1"
+                    />
+                    <circle fill="#d52b1e" cx="18" cy="12" r="6" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+            <div class="header__btn">
+              <a class="header__a btn reverse-slid-bg" href="#contact"
+                >Contact</a
+              >
+            </div>
+          </nav>
+
+          <button class="menuMobile__btn" aria-label="Ouvrir/fermer le menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="main__img">
+          <img
+            src="img/mado1.jpg"
+            alt="Fenetre d'un temple japonais"
+            class="main__burner"
+          />
+          <div class="main__text">
+            <p class="textAnimationName"></p>
+            <p class="textAnimation fadein"></p>
+          </div>
+          <p class="main__p font-sm">
+            Des cours ludiques pour aimer le japonais, <br />progresser avec
+            plaisir et oser parler avec confiance dès les premiers cours.
+          </p>
+        </div>
+
+        <div class="main__box">
+          <section class="about" id="about">
+            <div class="about__inner">
+              <h2 class="about__title tween-animate animate-title main-title">
+                Votre professeure
+              </h2>
+              <div class="about__box">
+                <div class="about__img">
+                  <img
+                    src="img/love.webp"
+                    alt="Ruban en forme de coeur sur un fond fleuri"
+                  />
+                </div>
+                <div class="about__text">
+                  <p class="about__p">
+                    Bonjour, je suis Sayaka, professeure japonaise native basée
+                    en France.<br /><br />
+                    Mon objectif est que chaque élève apprenne le japonais avec
+                    plaisir, aime cette langue de plus en plus et gagne la
+                    confiance nécessaire pour la parler.<br /><br />
+                    Je prépare un curriculum adapté à chaque personne, avec deux
+                    approches possibles : apprendre le japonais progressivement
+                    en passant par le français, ou pratiquer directement en
+                    japonais pour s'immerger davantage.<br /><br />
+                    Pour les plus jeunes, les cours deviennent ludiques et
+                    vivants grâce aux peluches, aux jeux, aux chansons et aux
+                    échanges simples.
+                  </p>
+                </div>
+              </div>
+              <div class="about__btn">
+                <a class="about__a btn slid-bg" href="#contact"
+                  >Demander un cours d'essai</a
                 >
               </div>
-            </nav>
-
-            <button class="menuMobile__btn" aria-label="Ouvrir/fermer le menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-        </header>
-        <main class="main">
-          <div class="main__img">
-            <img
-              src="img/mado1.jpg"
-              alt="Fenêtre du temple de Kyoto"
-              class="main__burner"
-            />
-            <div class="main__text">
-              <p class="textAnimationName"></p>
-              <p class="textAnimation"></p>
             </div>
-            <h1 class="main__p font-sm">
-              Un site Web qui donne vie aux histoires
-            </h1>
-          </div>
-          <div class="main__box">
-            <section class="about" id="about">
-              <div class="about__inner">
-                <h2 class="about__title tween-animate animate-title main-title">
-                  Présentation
-                </h2>
-                <div class="about__box">
-                  <div class="about__img">
-                    <img
-                      src="img/love.webp"
-                      alt="
-										Un ruban coeur est affiché sur un fond avec de nombreuses fleurs."
-                    />
-                  </div>
-                  <div class="about__text">
-                    <p class="about__p">
-                      Cuisine faite avec affection.<br />
-                      Plante cultivée avec affection. <br />Tableau réalisé avec
-                      affection.<br /><br />
+          </section>
 
-                      Les choses faites avec affection et qui ont une histoire
-                      touchent le cœur des gens.<br /><br />
+          <section class="works" id="works">
+            <h2 class="main-title tween-animate animate-title">Cours</h2>
+            <p class="sub-title mb-sm fadein scroll-fadein">
+              Des cours sur mesure pour apprendre, parler et prendre confiance.
+            </p>
+            <ul class="flex lessons" id="works-container"></ul>
+          </section>
 
-                      Je crée des sites web remplis d'affection et qui touchent
-                      le cœur, afin que quiconque visite le site puisse imaginer
-                      l'histoire.
-                    </p>
-                  </div>
-                </div>
-                <div class="about__btn">
-                  <a class="about__a btn slid-bg" href="#contact"
-                    >CONTACTEZ - MOI</a
-                  >
-                </div>
-              </div>
-            </section>
-
-            <section class="works" id="works">
-              <div>
-                <h2 class="main-title tween-animate animate-title">Works</h2>
-                <p class="sub-title mb-sm tween-animate animate-title">
-                  Mes Projets
+          <section class="flow">
+            <h2 class="main-title tween-animate animate-title">Déroulement</h2>
+            <div class="flow__grid">
+              <article class="flow__item">
+                <span class="flow__number">01</span>
+                <h3>Premier échange</h3>
+                <p>
+                  Nous faisons le point sur votre niveau, vos envies et vos
+                  disponibilités.
                 </p>
-              </div>
+              </article>
+              <article class="flow__item">
+                <span class="flow__number">02</span>
+                <h3>Cours personnalisé</h3>
+                <p>
+                  Je choisis l'approche la plus adaptée : avec le français ou
+                  directement en japonais.
+                </p>
+              </article>
+              <article class="flow__item">
+                <span class="flow__number">03</span>
+                <h3>Progression suivie</h3>
+                <p>
+                  Après chaque séance, vous repartez avec des conseils simples
+                  pour pratiquer.
+                </p>
+              </article>
+            </div>
+          </section>
 
-              <ul class="flex" id="works-container"></ul>
-            </section>
-            <section id="contact" class="contact">
-              <h2 class="contact__title main-title tween-animate animate-title">
-                Contactez-moi
-              </h2>
-              <form
-                action="https://api.staticforms.xyz/submit"
-                method="post"
-                class="contact__form"
-              >
+          <section id="contact" class="contact">
+            <h2 class="contact__title main-title tween-animate animate-title">
+              Contactez-moi
+            </h2>
+            <p class="contact__p sub-title fadein scroll-fadein">
+              Parlez-moi de votre niveau et du japonais que vous voulez
+              apprendre.
+            </p>
+            <form
+              action="https://api.staticforms.xyz/submit"
+              method="post"
+              class="contact__form"
+            >
+              <input
+                type="hidden"
+                name="accessKey"
+                value="202e9109-b303-4a3c-bfcb-952215c913b5"
+              />
+              <div class="contact__item">
+                <label for="name" class="contact__label sub-title">Nom</label>
                 <input
-                  type="hidden"
-                  name="accessKey"
-                  value="202e9109-b303-4a3c-bfcb-952215c913b5"
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="contact__inputs"
+                  placeholder="Votre nom"
+                  required
                 />
-                <div class="contact__item">
-                  <label for="name" class="contact__label sub-title">Nom</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="contact__inputs"
-                    placeholder="Votre Nom"
-                    required
-                  />
-                </div>
-                <div class="contact__item">
-                  <label for="email" class="contact__label sub-title"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="contact__inputs"
-                    placeholder="Votre e-mail"
-                    required
-                  />
-                </div>
-                <div class="contact__item">
-                  <label for="message" class="contact__label sub-title"
-                    >Message</label
-                  >
-                  <textarea
-                    id="message"
-                    name="message"
-                    class="contact__inputs"
-                    placeholder="Votre Message"
-                    required
-                  ></textarea>
-                </div>
+              </div>
+              <div class="contact__item">
+                <label for="email" class="contact__label sub-title"
+                  >Email</label
+                >
                 <input
-                  type="hidden"
-                  name="redirectTo"
-                  value="https://sfv2010.github.io/portfolio/confirmation"
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="contact__inputs"
+                  placeholder="Votre e-mail"
+                  required
                 />
-                <div class="contact__btn">
-                  <button type="submit" class="btn reverse-slid-bg">
-                    Envoyer
-                  </button>
-                </div>
-              </form>
-            </section>
-          </div>
-        </main>
-        <footer class="footer">
-          <div class="footer__container">
-            <img src="img/logoF.webp" alt="SV,développeuse web" class="logo" />
-            <nav class="footer__nav">
-              <ul class="footer__ul">
-                <li><a class="footer__li" href="#globalContainer">Top</a></li>
-                <li><a class="footer__li" href="#about">About </a></li>
-                <li><a class="footer__li" href="#works">Works</a></li>
-                <li><a class="footer__li" href="#contact">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="footer__copylight">&copy; Sayaka</div>
-        </footer>
-      </div>
-      <nav class="menuMobile">
-        <ul class="menuMobile__main">
-          <li class="menuMobile__item">
-            <a href="#" class="menuMobile__link">
-              <span class="menu-title">Home</span>
-            </a>
-          </li>
-          <li class="menuMobile__item">
-            <a href="#about" class="menuMobile__link">
-              <span class="menu-title">About</span>
-            </a>
-          </li>
-          <li class="menuMobile__item">
-            <a href="#works" class="menuMobile__link">
-              <span class="menu-title">Works</span>
-            </a>
-          </li>
-          <li class="menuMobile__item">
-            <a href="jp.html?lang=jp" class="menuMobile__link">
-              <span class="menu-title">日本語</span>
-            </a>
-          </li>
-          <li class="menuMobile__item">
-            <a href="#contact" class="menuMobile__link">
-              <span class="menu-title">Contact</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+              </div>
+              <div class="contact__item">
+                <label for="message" class="contact__label sub-title"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  class="contact__inputs"
+                  placeholder="Votre niveau, vos objectifs, vos disponibilités..."
+                  required
+                ></textarea>
+              </div>
+              <input
+                type="hidden"
+                name="redirectTo"
+                value="https://sfv2010.github.io/portfolio/confirmation"
+              />
+              <div class="contact__btn">
+                <button type="submit" class="btn reverse-slid-bg">
+                  Envoyer
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__container">
+          <img src="img/logoF.webp" alt="Logo Sayaka" class="logo" />
+          <nav class="footer__nav">
+            <ul class="footer__ul">
+              <li><a class="footer__li" href="#">Accueil</a></li>
+              <li><a class="footer__li" href="#about">Professeur</a></li>
+              <li><a class="footer__li" href="#works">Cours</a></li>
+              <li><a class="footer__li" href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__copylight">&copy; Sayaka</div>
+      </footer>
     </div>
+
+    <nav class="menuMobile">
+      <ul class="menuMobile__main">
+        <li class="menuMobile__item">
+          <a href="#" class="menuMobile__link">
+            <span class="menu-title">Accueil</span>
+          </a>
+        </li>
+        <li class="menuMobile__item">
+          <a href="#about" class="menuMobile__link">
+            <span class="menu-title">Professeur</span>
+          </a>
+        </li>
+        <li class="menuMobile__item">
+          <a href="#works" class="menuMobile__link">
+            <span class="menu-title">Cours</span>
+          </a>
+        </li>
+        <li class="menuMobile__item">
+          <a href="jp.html?lang=jp" class="menuMobile__link">
+            <span class="menu-title">日本語</span>
+          </a>
+        </li>
+        <li class="menuMobile__item">
+          <a href="#contact" class="menuMobile__link">
+            <span class="menu-title">Contact</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
     <script src="scripts/mobile.js"></script>
     <script src="scripts/scroll.js"></script>
-    <script src="scripts/slider.js"></script>
     <script src="scripts/textAnimation.js"></script>
     <script src="scripts/textTerminal.js"></script>
     <script src="scripts/works.js"></script>

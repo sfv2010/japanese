@@ -101,11 +101,14 @@ body {
 }
 
 .mb-sm {
+  margin-top: 5px;
   margin-bottom: 30px;
   @include mq(md) {
     margin-bottom: 50px;
+    margin-top: 10px;
   }
   @include mq(lg) {
+    margin-top: 20px;
     margin-bottom: 90px;
   }
 }

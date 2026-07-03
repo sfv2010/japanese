@@ -52,25 +52,25 @@ body {
   }
 }
 
-.font-md, .about__p, .works__title, .btn, .sub-title {
+.font-md, .about__p, .works__title, .lesson-card__text, .lesson-card__price, .flow__item > h3, .flow__item > p, .btn, .sub-title {
   font-size: 14px;
 }
 @media screen and (min-width: 480px) {
-  .font-md, .about__p, .works__title, .btn, .sub-title {
+  .font-md, .about__p, .works__title, .lesson-card__text, .lesson-card__price, .flow__item > h3, .flow__item > p, .btn, .sub-title {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 600px) {
-  .font-md, .about__p, .works__title, .btn, .sub-title {
+  .font-md, .about__p, .works__title, .lesson-card__text, .lesson-card__price, .flow__item > h3, .flow__item > p, .btn, .sub-title {
     font-size: 17px;
   }
 }
 @media screen and (min-width: 960px) {
-  .font-md, .about__p, .works__title, .btn, .sub-title {
+  .font-md, .about__p, .works__title, .lesson-card__text, .lesson-card__price, .flow__item > h3, .flow__item > p, .btn, .sub-title {
     font-size: 19px;
   }
 }
-.font-md, .about__p, .works__title, .btn, .sub-title {
+.font-md, .about__p, .works__title, .lesson-card__text, .lesson-card__price, .flow__item > h3, .flow__item > p, .btn, .sub-title {
   letter-spacing: 0.03em;
   line-height: 1.5;
 }
@@ -127,15 +127,18 @@ body {
 }
 
 .mb-sm, .about__title, .about__img, .footer__container {
+  margin-top: 5px;
   margin-bottom: 30px;
 }
 @media screen and (min-width: 600px) {
   .mb-sm, .about__title, .about__img, .footer__container {
     margin-bottom: 50px;
+    margin-top: 10px;
   }
 }
 @media screen and (min-width: 960px) {
   .mb-sm, .about__title, .about__img, .footer__container {
+    margin-top: 20px;
     margin-bottom: 90px;
   }
 }
@@ -154,11 +157,11 @@ body {
   }
 }
 
-.mb-lg, .main__img, .about, .contact {
+.mb-lg, .main__img, .about, .flow, .contact {
   margin-bottom: 80px;
 }
 @media screen and (min-width: 960px) {
-  .mb-lg, .main__img, .about, .contact {
+  .mb-lg, .main__img, .about, .flow, .contact {
     margin-bottom: 180px;
   }
 }
@@ -234,8 +237,8 @@ body {
   background-color: white;
   height: 80px;
   width: 100%;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
 }
 .header__inner {
   display: flex;
@@ -246,6 +249,27 @@ body {
 .header__logo {
   width: 80px;
   height: auto;
+}
+.header__title {
+  margin-right: auto;
+  text-align: left;
+  line-height: 1.15;
+  font-size: 16px;
+  font-weight: 700;
+  color: #9d3f52;
+}
+.header__title > span {
+  color: black;
+  font-size: 13px;
+  font-weight: 400;
+}
+@media screen and (min-width: 600px) {
+  .header__title {
+    font-size: 20px;
+  }
+  .header__title > span {
+    font-size: 15px;
+  }
 }
 .header__nav {
   display: none;
@@ -267,6 +291,7 @@ body {
   position: relative;
   margin: 10px;
   padding: 10px;
+  font-weight: 700;
   transition: all 0.3s;
 }
 .header__li::after {
@@ -282,7 +307,7 @@ body {
   transition: transform 0.3s; /*変形の時間*/
 }
 .header__li:hover {
-  color: #884898;
+  color: #9d3f52;
 }
 .header__li:hover::after {
   transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
@@ -298,6 +323,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   border: 1px solid black;
   margin: 0 !important;
+  white-space: nowrap;
 }
 
 .header__menuOpen #container {
@@ -469,13 +495,13 @@ body {
   animation-delay: -1.9s;
 }
 .loader__bloc > div:nth-child(-n+2) {
-  background-color: #884898;
+  background-color: #9d3f52;
 }
 .loader__bloc > div:nth-child(n+3) {
-  background-color: #a2aad4;
+  background-color: #3d7d83;
 }
 .loader__bloc > div:nth-child(n+5) {
-  background-color: #be9fb2;
+  background-color: #d7b46a;
 }
 
 .coverSlide {
@@ -785,8 +811,8 @@ img {
 }
 
 .contact {
-  background-color: #fff5e0;
-  border-radius: 10px;
+  background-color: #fff7e8;
+  border-radius: 8px;
   padding: 50px 0 10px;
 }
 .contact__title {
@@ -824,7 +850,7 @@ img {
   text-align: left;
   width: 100px;
   margin: 10px 0;
-  border-left: 3px solid #884898;
+  border-left: 3px solid #9d3f52;
   padding-left: 10px;
 }
 @media screen and (min-width: 600px) {
@@ -915,16 +941,12 @@ img {
   color: white;
 }
 
-#globalContainer {
-  text-align: center;
-}
-
 #container {
   position: relative;
-  height: 100vh;
   z-index: 2;
   transition: all 0.5s;
   transition: transform 0.5s;
+  text-align: center;
 }
 
 .textAnimationName {
@@ -946,35 +968,47 @@ img {
 }
 @media screen and (min-width: 960px) {
   .textAnimationName {
-    font-size: 36px;
+    font-size: 42px;
   }
 }
 
 .textAnimation {
   letter-spacing: 0.05em;
   font-size: 14px;
-  margin: 4% 0 6%;
+  margin: 2% 0 0;
 }
 @media screen and (min-width: 480px) {
   .textAnimation {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 600px) {
   .textAnimation {
-    font-size: 19px;
+    font-size: 22px;
   }
 }
 @media screen and (min-width: 960px) {
   .textAnimation {
-    font-size: 21px;
+    font-size: 26px;
   }
+}
+
+.fadein {
+  opacity: 0;
+  transform: translateY(32px);
+  will-change: opacity, transform;
+}
+
+.fadein.show {
+  transform: translateY(0);
+  opacity: 1;
+  transition: opacity 2s ease, transform 2s ease;
 }
 
 .p {
   font-size: 1.1rem;
   letter-spacing: 0.05em;
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 .main__img {
@@ -988,11 +1022,12 @@ img {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(90deg, rgba(20, 21, 18, 0.68), rgba(20, 21, 18, 0.3));
   pointer-events: none;
 }
 .main__text {
   position: absolute;
+  width: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1001,21 +1036,23 @@ img {
 }
 .main__p {
   position: absolute;
-  top: 85%;
+  top: 78%;
   left: 50%;
   width: 90%;
   transform: translate(-50%, -50%);
   z-index: 2;
   color: whitesmoke;
   letter-spacing: 0.05em;
+  line-height: 1.7;
 }
 .main__burner {
   width: 100%;
-  height: 30vh;
+  height: 58vh;
+  min-height: 380px;
 }
 @media screen and (min-width: 480px) {
   .main__burner {
-    height: auto;
+    height: 68vh;
   }
 }
 
@@ -1033,7 +1070,7 @@ img {
   }
 }
 .about__inner {
-  background-color: #eaebe6;
+  background-color: #f7f2ea;
   padding: 15px;
 }
 @media screen and (min-width: 600px) {
@@ -1059,6 +1096,7 @@ img {
      object-fit: contain;
   width: 100%;
   height: 100%;
+  border-radius: 8px;
 }
 .about__text {
   padding: 0% 10px;
@@ -1075,7 +1113,7 @@ img {
   }
 }
 .about__p {
-  font-weight: 700;
+  font-weight: 500;
 }
 @media screen and (min-width: 960px) {
   .about__p {
@@ -1093,7 +1131,7 @@ img {
 
 .works {
   padding-top: 0px;
-  text-align: left;
+  text-align: center;
 }
 @media screen and (min-width: 600px) {
   .works__item {
@@ -1102,8 +1140,93 @@ img {
 }
 .works__title {
   font-weight: 700;
-  margin: 5px 0;
+  margin: 18px 0 10px;
   text-align: center;
+}
+
+.lessons {
+  gap: 26px;
+  justify-content: center;
+}
+@media screen and (min-width: 600px) {
+  .lessons {
+    gap: 34px 4%;
+  }
+}
+
+.lesson-card {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  padding-bottom: 24px;
+  text-align: left;
+}
+@media screen and (min-width: 600px) {
+  .lesson-card {
+    flex-basis: 48%;
+  }
+}
+.lesson-card__image {
+  aspect-ratio: 4/3;
+  background-color: #f7f2ea;
+  overflow: hidden;
+}
+.lesson-card__image > img {
+  display: block;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.lesson-card__text {
+  color: #535353;
+  padding: 0 22px;
+  text-align: left;
+}
+.lesson-card__price {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: black;
+  font-weight: 700;
+  margin: 18px 22px 0;
+  padding-top: 14px;
+  text-align: left;
+}
+
+.flow {
+  text-align: center;
+}
+.flow__grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 40px;
+}
+@media screen and (min-width: 600px) {
+  .flow__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.flow__item {
+  background-color: #f7f2ea;
+  border-left: 4px solid #3d7d83;
+  border-radius: 8px;
+  padding: 26px 22px;
+  text-align: left;
+}
+.flow__item > h3 {
+  color: black;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.flow__item > p {
+  color: #535353;
+}
+.flow__number {
+  color: #9d3f52;
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
 @keyframes loader {
