@@ -2,53 +2,143 @@
 @use "../Base/base" as *;
 
 .footer {
-    padding-bottom: 20px;
-    color: $cWhite;
-    background-color: black;
-    &__container {
-        @extend .content-width;
-        @extend .flex;
-        @extend .mb-sm;
-        align-items: center;
-        justify-content: space-between;
-        color: $cWhite;
+  background-color: #000;
+  color: $cWhite;
+  padding: 20px 20px 20px;
+
+  &__container {
+    @extend .content-width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+  &__nav {
+    margin: 10px 0;
+    @include mq(md) {
+      margin: 10px 0 40px;
     }
-    &__nav {
-        @extend .flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
+  }
+
+  &__ul,
+  &__legal-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__li,
+  &__legal a,
+  &__cookie-settings {
+    color: $cWhite;
+    font: inherit;
+    text-decoration: none;
+  }
+
+  &__legal a,
+  &__cookie-settings {
+    font-size: 13px;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+  }
+
+  &__cookie-settings {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__siret {
+    margin-top: 30px;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0.7;
+  }
+
+  &__copyright {
+    margin-top: 8px;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0.7;
+  }
+}
+
+.cookie-banner {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  z-index: 9999;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 22px;
+  border-radius: 10px;
+  background-color: $cWhite;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+  color: $cBlack;
+  text-align: left;
+
+  &__title {
+    margin: 0 0 10px;
+    font-size: 20px;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: $colorPrimary;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include mq(md) {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+
+  &__button {
+    min-height: 44px;
+    padding: 10px 18px;
+    border: 1px solid $colorPrimary;
+    border-radius: 6px;
+    background-color: $cWhite;
+    color: $colorPrimary;
+    cursor: pointer;
+    font-weight: 700;
+
+    &--accept {
+      background-color: $colorPrimary;
+      color: $cWhite;
     }
 
-    &__ul {
-        @extend .flex;
-        flex-direction: row;
-        justify-content: space-around;
+    &--settings {
+      border-color: #777;
+      color: #555;
     }
-    &__li {
-        display: inline-block;
-        padding: 8px;
-        color: $cWhite;
-        padding: 10px;
-        margin: 5px;
-        @extend .font-sm;
-        @include mq(md) {
-            margin: 10px;
-        }
-        transition: all 0.3s;
-        &:hover {
-            transform: scale(1.2);
-        }
-    }
-    &__copylight {
-        font-size: 12px;
-        margin-top: 40px;
-    }
+  }
 }
+
 .logo {
-    width: 100px;
-    height: auto;
-    @include mq(md) {
-        width: 150px;
-    }
+  display: block;
+  width: min(72vw, 280px);
+  height: auto;
 }

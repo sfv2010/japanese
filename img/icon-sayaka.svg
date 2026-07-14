@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Sayaka – Cours de japonais</title>
+  <rect width="64" height="64" rx="14" fill="#9d3f52"/>
+  <path
+    d="M52 29.5c0 12.5-10.1 22.5-23 22.5H20l-7 5 2.5-9.2C10.7 43.5 8 37 8 30.2 8 17.4 18.4 7 31.5 7 44.7 7 55 17 55 29.5"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="3.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <text
+    x="31.5"
+    y="40.5"
+    fill="#ffffff"
+    font-family="'Hiragino Sans','Yu Gothic','Noto Sans JP',sans-serif"
+    font-size="29"
+    font-weight="500"
+    text-anchor="middle"
+  >さ</text>
+</svg>

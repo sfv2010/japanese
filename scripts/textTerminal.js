@@ -34,15 +34,15 @@ const pageLanguage =
 const heroText = {
   fr: {
     name: "    Apprendre le japonais ",
-    text: "avec une professeure native japonaise.",
+    text: "avec une professeure native japonaise",
   },
   ja: {
-    name: "日本語を、楽しく学ぶ",
-    text: "日本語がもっと好きになり、自信を持って話せるオンラインレッスン。",
+    name: "日本語を、楽しく学びましょう！",
+    text: "日本語がもっと好きになり、自信を持って話せる。",
   },
   jp: {
-    name: "日本語を、楽しく学ぶ",
-    text: "日本語がもっと好きになり、自信を持って話せるオンラインレッスン。",
+    name: "日本語を、楽しく学びましょう！",
+    text: "日本語がもっと好きになり、自信を持って話せる。",
   },
 };
 
