@@ -18,16 +18,38 @@
       name="keywords"
       content="cours japonais, japonais en ligne, prof japonaise native, apprendre japonais, cours japonais débutant"
     />
-    <link rel="icon" href="img/icon-sayaka.png" type="image/png" />
-    <link rel="stylesheet" href="./styles/vendors/reset.css" />
+    <link
+      rel="icon"
+      href="img/icon-sayaka.svg"
+      type="image/png"
+      sizes="48x48"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="img/mado1-800.webp"
+      imagesrcset="img/mado1-800.webp 800w, img/mado1-1200.webp 1200w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&family=Noto+Sans+JP:wght@500&family=Zen+Old+Mincho&display=swap"
-      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&amp;display=swap"
+      rel="preload"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&amp;display=swap"
+    /></noscript>
+    <link rel="stylesheet" href="./css/style.min.css" />
   </head>
 
   <body>
@@ -37,9 +59,11 @@
       <header class="header">
         <div class="header__inner">
           <img
-            src="img/logo-sayaka-header.png"
+            src="img/logo-sayaka-header-v2.webp"
             alt="Logo Sayaka, cours de japonais"
             class="header__logo"
+            width="204"
+            height="204"
           />
           <h1 class="header__title">
             Cours de japonais <br /><span>avec Sayaka</span>
@@ -98,9 +122,15 @@
       <main class="main">
         <div class="main__img">
           <img
-            src="img/mado1.jpg"
+            src="img/mado1-800.webp"
+            srcset="img/mado1-800.webp 800w, img/mado1-1200.webp 1200w"
+            sizes="100vw"
             alt="Fenetre d'un temple japonais"
             class="main__burner"
+            width="1200"
+            height="615"
+            fetchpriority="high"
+            decoding="async"
           />
           <p class="main__jp-title">楽しい日本語</p>
           <div class="main__text">
@@ -112,7 +142,12 @@
             plaisir et oser parler avec confiance dès les premiers cours.
           </p>
 
-          <a class="main__btn" href="#contact">
+          <a
+            class="main__btn"
+            href="https://calendly.com/sayakavincent1980/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             S’inscrire à un cours d’essai
           </a>
         </div>
@@ -126,8 +161,12 @@
               <div class="about__box">
                 <div class="about__img">
                   <img
-                    src="img/love.webp"
+                    src="img/love-600.webp"
                     alt="Ruban en forme de coeur sur un fond fleuri"
+                    width="600"
+                    height="453"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div class="about__text">
@@ -148,7 +187,11 @@
                 </div>
               </div>
               <div class="about__btn">
-                <a class="about__a btn slid-bg" href="#contact"
+                <a
+                  class="about__a btn slid-bg"
+                  href="https://calendly.com/sayakavincent1980/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >Demander un cours d'essai</a
                 >
               </div>
@@ -172,26 +215,62 @@
             <div class="flow__grid">
               <article class="flow__item">
                 <span class="flow__number">01</span>
-                <h3>Premier échange</h3>
+                <h3>Réserver un cours d’essai gratuit</h3>
                 <p>
-                  Nous faisons le point sur votre niveau, vos envies et vos
-                  disponibilités.
+                  Choisissez un créneau disponible dans le calendrier pour
+                  découvrir le cours et échanger sur vos objectifs.
                 </p>
+                <p>
+                  Lors de la réservation, merci d’indiquer votre nom et de
+                  préciser brièvement votre niveau de japonais.
+                </p>
+                <a
+                  class="flow__booking"
+                  href="https://calendly.com/sayakavincent1980/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Réserver ici</a
+                >
               </article>
               <article class="flow__item">
                 <span class="flow__number">02</span>
-                <h3>Cours personnalisé</h3>
+                <h3>Choisir la méthode</h3>
                 <p>
-                  Je choisis l'approche la plus adaptée : avec le français ou
-                  directement en japonais.
+                  Selon vos objectifs, vos besoins et votre niveau actuel, nous
+                  échangerons ensemble sur la façon dont vous souhaitez
+                  apprendre le japonais.
+                </p>
+                <p>
+                  Les cours peuvent se dérouler entièrement en japonais ou
+                  combiner le japonais et le français, selon votre niveau et vos
+                  préférences. Même si vous débutez, ne vous inquiétez pas :
+                  nous avancerons à votre rythme, dans une ambiance détendue et
+                  bienveillante.
+                </p>
+                <p>
+                  Ce premier entretien nous permettra de faire connaissance, de
+                  discuter de vos objectifs et de trouver la formule la plus
+                  adaptée à votre apprentissage.
                 </p>
               </article>
               <article class="flow__item">
                 <span class="flow__number">03</span>
-                <h3>Progression suivie</h3>
+                <h3>S’inscrire aux cours</h3>
                 <p>
-                  Après chaque séance, vous repartez avec des conseils simples
-                  pour pratiquer.
+                  À l’issue du cours d’essai, si vous souhaitez poursuivre les
+                  cours, nous conviendrons ensemble du jour et de l’horaire qui
+                  vous conviennent le mieux.
+                </p>
+                <p>
+                  Après le cours d’essai, vous
+                  pouvez prendre le temps de réfléchir tranquillement. Il n’y a
+                  aucune obligation de donner une réponse immédiatement.
+                </p>
+                <p>
+                  Toutes les informations concernant l’inscription et les
+                  modalités de paiement vous seront expliquées par la suite. Les
+                  cours peuvent être réglés par carte bancaire via Stripe ou par
+                  virement bancaire.
                 </p>
               </article>
             </div>
@@ -275,9 +354,13 @@
         <div class="footer__container">
           <a href="index.html" class="footer__logo-link" aria-label="Accueil">
             <img
-              src="img/logo-sayaka-footer.png"
+              src="img/logo-sayaka-footer-v3.webp"
               alt="Sayaka – Cours de japonais"
               class="logo"
+              width="560"
+              height="219"
+              loading="lazy"
+              decoding="async"
             />
           </a>
 

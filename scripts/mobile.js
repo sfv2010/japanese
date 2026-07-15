@@ -1,33 +1,63 @@
 class MobileMenu {
     constructor() {
-        this.DOM = {};
-        this.DOM.btn = document.querySelector(".menuMobile__btn");
-        this.DOM.cover = document.querySelector(".menuMobile__cover");
-        this.DOM.container = document.querySelector("#globalContainer");
-        this.eventType = this._getEventType();
-        this._addEvent();
-        this._adjustCoverHeight(); // カバーの高さを調整する
+        this.btn = document.querySelector(".menuMobile__btn");
+        this.cover = document.querySelector(".menuMobile__cover");
+        this.nav = document.querySelector(".menuMobile");
+        this.links = document.querySelectorAll(".menuMobile__link");
+
+        if (!this.btn || !this.cover || !this.nav) return;
+
+        if (!this.nav.id) this.nav.id = "mobile-navigation";
+        this.btn.setAttribute("aria-controls", this.nav.id);
+        this.btn.setAttribute("aria-expanded", "false");
+        this.nav.setAttribute("aria-hidden", "true");
+
+        this._addEvents();
     }
 
-    _getEventType() {
-        const isTouchCapable =
-            "ontouchstart" in window ||
-            (window.DocumentTouch && document instanceof DocumentTouch);
-
-        return isTouchCapable ? "touchstart" : "click";
+    get isOpen() {
+        return document.body.classList.contains("header__menuOpen");
     }
+
+    _setOpen(open) {
+        document.body.classList.toggle("header__menuOpen", open);
+        this.btn.setAttribute("aria-expanded", String(open));
+        this.nav.setAttribute("aria-hidden", String(!open));
+    }
+
     _toggle() {
-        this.DOM.container.classList.toggle("header__menuOpen");
-        this._adjustCoverHeight(); // メニューの状態が変わるたびにカバーの高さを再調整する
+        this._setOpen(!this.isOpen);
     }
 
-    //スマホで見られたときはタッチ、PCはクリックと切り替える
-    _addEvent() {
-        this.DOM.btn.addEventListener("click", this._toggle.bind(this));
-        this.DOM.cover.addEventListener("click", this._toggle.bind(this));
+    _close() {
+        this._setOpen(false);
     }
-    _adjustCoverHeight() {
-        this.DOM.cover.style.height = `${document.documentElement.scrollHeight}px`;
+
+    _addEvents() {
+        this.btn.addEventListener("click", () => this._toggle());
+        this.cover.addEventListener("click", () => this._close());
+
+        this.links.forEach((link) => {
+            link.addEventListener("click", () => this._close());
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && this.isOpen) {
+                this._close();
+                this.btn.focus();
+            }
+        });
+
+        const desktopView = window.matchMedia("(min-width: 960px)");
+        const closeOnDesktop = (event) => {
+            if (event.matches) this._close();
+        };
+
+        if (desktopView.addEventListener) {
+            desktopView.addEventListener("change", closeOnDesktop);
+        } else {
+            desktopView.addListener(closeOnDesktop);
+        }
     }
 }
 

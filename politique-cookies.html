@@ -11,15 +11,17 @@
       name="description"
       content="Politique relative aux cookies du site Cours de japonais avec Sayaka."
     />
-    <link rel="icon" href="img/icon-sayaka.png" type="image/png" />
-    <link rel="stylesheet" href="./styles/vendors/reset.css" />
+    <link rel="icon" href="img/icon-sayaka-48.png" type="image/png" sizes="48x48" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&amp;family=Noto+Sans+JP:wght@500&amp;display=swap"
-      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&amp;display=swap"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&amp;display=swap" /></noscript>
+    <link rel="stylesheet" href="./css/style.min.css" />
   </head>
   <body>
     <div id="container">
@@ -28,9 +30,11 @@
       <header class="header">
         <div class="header__inner">
           <img
-            src="img/logo-sayaka-header.png"
+            src="img/logo-sayaka-header-v2.webp"
             alt="Logo Sayaka, cours de japonais"
             class="header__logo"
+            width="204"
+            height="204"
           />
           <h1 class="header__title">
             Cours de japonais <br /><span>avec Sayaka</span>
@@ -205,9 +209,13 @@
       <div class="footer__container">
         <a href="index.html" class="footer__logo-link" aria-label="Accueil">
           <img
-            src="img/logo-sayaka-footer.png"
+            src="img/logo-sayaka-footer-v3.webp"
             alt="Sayaka – Cours de japonais"
             class="logo"
+            width="560"
+            height="219"
+            loading="lazy"
+            decoding="async"
           />
         </a>
 

@@ -12,296 +12,344 @@
       name="keywords"
       content="日本語レッスン, 日本語オンラインレッスン, 日本語を学ぶ, 子供の日本語"
     />
-    <link rel="stylesheet" href="./styles/vendors/reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="img/icon-sayaka.png" type="image/png" />
+    <link
+      rel="icon"
+      href="img/icon-sayaka.svg"
+      type="image/svg+xml"
+      sizes="48x48"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="img/mado1-800.webp"
+      imagesrcset="img/mado1-800.webp 800w, img/mado1-1200.webp 1200w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&family=Noto+Sans+JP:wght@500&family=Zen+Old+Mincho&display=swap"
-      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&amp;display=swap"
+      rel="preload"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
-     <link rel="stylesheet" href="./css/style.css" />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&amp;display=swap"
+    /></noscript>
+    <link rel="stylesheet" href="./css/style.min.css" />
   </head>
 
   <body>
-      <div id="container" class="jp">
-        <div class="menuMobile__cover"></div>
+    <div id="container" class="jp">
+      <div class="menuMobile__cover"></div>
 
-        <header class="header">
-          <div class="header__inner">
-            <img
-              src="img/logo-sayaka-header.png"
-              alt="Sayaka 日本語レッスンのロゴ"
-              class="header__logo"
-            />
-            <h1 class="header__title">
-              日本語レッスン <br /><span>Sayaka</span>
-            </h1>
+      <header class="header">
+        <div class="header__inner">
+          <img
+            src="img/logo-sayaka-header-v2.webp"
+            alt="Sayaka 日本語レッスンのロゴ"
+            class="header__logo"
+            width="204"
+            height="204"
+          />
+          <h1 class="header__title">
+            日本語レッスン <br /><span>Sayaka</span>
+          </h1>
 
-            <nav class="header__nav">
-              <ul class="header__ul">
-                <li><a class="header__li" href="jp.html?lang=jp">トップ</a></li>
-                <li><a class="header__li" href="#about">講師</a></li>
-                <li><a class="header__li" href="#works">レッスン</a></li>
-                <li>
-                  <a
-                    class="header__li"
-                    href="index.html?lang=fr"
-                    aria-label="フランス語に切り替える"
+          <nav class="header__nav">
+            <ul class="header__ul">
+              <li><a class="header__li" href="jp.html?lang=jp">トップ</a></li>
+              <li><a class="header__li" href="#about">講師</a></li>
+              <li><a class="header__li" href="#works">レッスン</a></li>
+              <li>
+                <a
+                  class="header__li"
+                  href="index.html?lang=fr"
+                  aria-label="フランス語に切り替える"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 38 26"
+                    width="38"
+                    height="26"
+                    role="img"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 38 26"
+                    <title>フランス国旗</title>
+                    <rect
                       width="38"
                       height="26"
-                      role="img"
-                    >
-                      <title>フランス国旗</title>
-                      <rect
-                        width="38"
-                        height="26"
-                        fill="none"
-                        stroke="#000000"
-                        stroke-width="2"
-                      />
-                      <rect x="1" y="1" width="12" height="24" fill="#0055a4" />
-                      <rect
-                        x="13"
-                        y="1"
-                        width="12"
-                        height="24"
-                        fill="#ffffff"
-                      />
-                      <rect
-                        x="25"
-                        y="1"
-                        width="12"
-                        height="24"
-                        fill="#ef4135"
-                      />
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <div class="header__btn">
-                <a class="header__a btn reverse-slid-bg" href="#contact"
-                  >お問い合わせ</a
+                      fill="none"
+                      stroke="#000000"
+                      stroke-width="2"
+                    />
+                    <rect x="1" y="1" width="12" height="24" fill="#0055a4" />
+                    <rect x="13" y="1" width="12" height="24" fill="#ffffff" />
+                    <rect x="25" y="1" width="12" height="24" fill="#ef4135" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+            <div class="header__btn">
+              <a class="header__a btn reverse-slid-bg" href="#contact"
+                >お問い合わせ</a
+              >
+            </div>
+          </nav>
+
+          <button class="menuMobile__btn" aria-label="メニューを開閉する">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="main__img">
+          <img
+            src="img/mado1-800.webp"
+            srcset="img/mado1-800.webp 800w, img/mado1-1200.webp 1200w"
+            sizes="100vw"
+            alt="日本のお寺の窓"
+            class="main__burner"
+            width="1200"
+            height="615"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <div class="main__text">
+            <h2 class="textAnimationName text-jp"></h2>
+            <p class="textAnimation fadein text-jp text-jp-sub"></p>
+          </div>
+          <p class="main__p font-sm main__p-jp">
+            幼児・子供向けの、<br />楽しい日本語オンラインレッスン。
+          </p>
+          <!-- <h3 class="main__jp-title">楽しい日本語</h3> -->
+          <a class="main__btn" href="#contact">無料体験レッスンを申し込む</a>
+        </div>
+
+        <div class="main__box">
+          <section class="about" id="about">
+            <div class="about__inner">
+              <h2 class="about__title tween-animate animate-title main-title">
+                講師について
+              </h2>
+              <div class="about__box">
+                <div class="about__img">
+                  <img
+                    src="img/love-600.webp"
+                    alt="花柄の背景にハートのリボン"
+                    width="600"
+                    height="453"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="about__text">
+                  <p class="about__p">
+                    こんにちは。日本語講師のさやかと申します。<br /><br />
+                    この日本語ページでは、幼児・子供向けのオンラインレッスンをご案内しています。<br /><br />
+                    日本語を楽しく学べること、日本語をどんどん好きになること、自信を持って話せるようになることを大切にしています。<br /><br />
+                    一人ひとりのお子様に合わせて、フランス語を通して学ぶ方法と、日本語だけで学ぶ方法から、最適なスタイルをご提案します。幼児クラスでは、ぬいぐるみ、ゲーム、歌、やりとりを取り入れ、とにかく楽しい！を感じられる授業にして、日本語をもっと好きになってもらえるレッスンを目指します。
+                  </p>
+                </div>
+              </div>
+              <div class="about__btn">
+                <a class="about__a btn slid-bg" href="#contact"
+                  >無料体験レッスンを申し込む</a
                 >
               </div>
-            </nav>
-
-            <button class="menuMobile__btn" aria-label="メニューを開閉する">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-        </header>
-
-        <main class="main">
-          <div class="main__img">
-            <img
-              src="img/mado1.jpg"
-              alt="日本のお寺の窓"
-              class="main__burner"
-            />
-            <div class="main__text">
-              <h2 class="textAnimationName"></h2>
-              <p class="textAnimation fadein"></p>
             </div>
-            <p class="main__p font-sm">
-              幼児・子供向けの、楽しい日本語オンラインレッスン。
+          </section>
+
+          <section id="works" class="works">
+            <h2
+              class="works__main-title tween-animate animate-title main-title"
+            >
+              レッスン
+            </h2>
+            <p class="sub-title mb-sm fadein scroll-fadein">
+              お子様の年齢、興味、ペースに合わせて内容を決めていきます。
             </p>
-            <h3 class="main__jp-title">楽しい日本語</h3>
-            <a class="main__btn" href="#contact">体験レッスンを相談する</a>
-          </div>
+            <ul class="flex lessons" id="works-container"></ul>
+          </section>
 
-          <div class="main__box">
-            <section class="about" id="about">
-              <div class="about__inner">
-                <h2 class="about__title tween-animate animate-title main-title">
-                  講師について
-                </h2>
-                <div class="about__box">
-                  <div class="about__img">
-                    <img src="img/love.jpg" alt="花柄の背景にハートのリボン" />
-                  </div>
-                  <div class="about__text">
-                    <p class="about__p">
-                      こんにちは。日本語講師のさやかと申します。<br /><br />
-                      この日本語ページでは、幼児・子供向けのオンラインレッスンをご案内しています。<br /><br />
-                      日本語を楽しく学べること、日本語をどんどん好きになること、自信を持って話せるようになることを大切にしています。<br /><br />
-                      一人ひとりのお子様に合わせて、フランス語を通して学ぶ方法と、日本語だけで学ぶ方法を組み合わせます。幼児クラスでは、ぬいぐるみ、ゲーム、歌、やりとりを取り入れ、とにかく楽しい！を感じられる授業にして、日本語を好きになってもらいます。
-                    </p>
-                  </div>
-                </div>
-                <div class="about__btn">
-                  <a class="about__a btn slid-bg" href="#contact"
-                    >体験レッスンを相談する</a
-                  >
-                </div>
-              </div>
-            </section>
+          <section class="flow">
+            <h2 class="main-title tween-animate animate-title">受講の流れ</h2>
+            <div class="flow__grid">
+              <article class="flow__item">
+                <span class="flow__number">01</span>
+                <h3>無料体験を予約する</h3>
+                <p>
+                  カレンダーからご希望の日時を選び、無料体験レッスンをお申し込みください。ご予約の際に、お子さまのお名前と現在の日本語レベルを簡単にお知らせください。
+                </p>
+                <p>
+                  また、お子さまの好きなことや興味のあるもの、好きなキャラクターなどがありましたら、ぜひ教えてください。お子さまに楽しんでいただけるよう、レッスン内容の参考にさせていただきます。
+                </p>
+                <p>
+                  ご不明な点やご不安なことがございましたら、どうぞお気軽にご相談ください。
+                </p>
+                <a
+                  class="flow__booking"
+                  href="https://calendly.com/sayakavincent1980/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >予約はこちら</a
+                >
+              </article>
+              <article class="flow__item">
+                <span class="flow__number">02</span>
+                <h3>学習方法を決める</h3>
+                <p>
+                  お子さまの現在のレベルや性格、興味に合わせて、楽しく続けられる学習方法を一緒に考えます。基本的には日本語のみでレッスンを行いますが、お子さまの理解度や状況に応じて、英語やフランス語を取り入れながら進めるなど、一人ひとりに合ったレッスンプランをご提案いたします。
+                </p>
+                <p>
+                  また、保護者さまのご希望や目標、ご不安な点などがございましたら、どんなことでもお気軽にご相談ください。お子さまが安心して楽しく学びながら、自信を持って日本語を使えるよう、保護者さまともコミュニケーションを取りながらサポートいたします。
+                </p>
+              </article>
+              <article class="flow__item">
+                <span class="flow__number">03</span>
+                <h3>レッスンのお申し込み</h3>
+                <p>
+                  無料体験レッスン後、レッスンを続けたいと思っていただけましたら、ご都合に合わせて曜日や時間帯を一緒に決めていきます。もちろん、その場でお返事いただく必要はありません。ご家族でゆっくりご検討ください。
+                </p>
+                <p>
+                  お支払い方法は、Stripeによるクレジットカード決済または銀行振込からお選びいただけます。詳細はお申し込みの際にご案内いたしますので、ご不明な点がございましたらお気軽にお問い合わせください。
+                </p>
+              </article>
+            </div>
+          </section>
 
-            <section id="works" class="works">
-              <h2 class="main-title works__title tween-animate animate-title">レッスン</h2>
-              <p class="sub-title mb-sm fadein scroll-fadein">
-                幼児・子供の年齢、興味、ペースに合わせて内容を決めていきます。
-              </p>
-              <ul class="flex lessons" id="works-container"></ul>
-            </section>
+          <section id="contact" class="contact">
+            <h2 class="contact__title main-title tween-animate animate-title">
+              お問い合わせ
+            </h2>
+            <p class="contact__p sub-title fadein scroll-fadein">
+              レベルや目標、希望日時をお気軽にお知らせください。
+            </p>
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              class="contact__form"
+              action="/confirmation.html"
+            >
+              <input type="hidden" name="form-name" value="contact" />
 
-            <section class="flow">
-              <h2 class="main-title tween-animate animate-title">受講の流れ</h2>
-              <div class="flow__grid">
-                <article class="flow__item">
-                  <span class="flow__number">01</span>
-                  <h3>ヒアリング</h3>
-                  <p>
-                    年齢、好きなこと、日本語との関わり、受講ペースを確認します。
-                  </p>
-                </article>
-                <article class="flow__item">
-                  <span class="flow__number">02</span>
-                  <h3>楽しいレッスン</h3>
-                  <p>
-                    ぬいぐるみ、ゲーム、歌、会話を使って楽しく日本語に触れます。
-                  </p>
-                </article>
-                <article class="flow__item">
-                  <span class="flow__number">03</span>
-                  <h3>自信につなげる</h3>
-                  <p>
-                    少しずつ「言えた」「わかった」を増やし、話す自信を育てます。
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section id="contact" class="contact">
-              <h2 class="contact__title main-title tween-animate animate-title">
-                お問い合わせ
-              </h2>
-              <p class="contact__p sub-title fadein scroll-fadein">
-                レベルや目標、希望日時をお気軽にお知らせください。
-              </p>
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                class="contact__form"
-                action="/confirmation.html"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-
-                <div class="contact__item">
-                  <label for="name" class="contact__label sub-title jp__label"
-                    >名前</label
-                  >
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="contact__inputs"
-                    placeholder="お名前"
-                    required
-                  />
-                </div>
-                <div class="contact__item">
-                  <label for="email" class="contact__label sub-title jp__label"
-                    >メール</label
-                  >
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="contact__inputs"
-                    placeholder="メールアドレス"
-                    required
-                  />
-                </div>
-                <div class="contact__item">
-                  <label
-                    for="message"
-                    class="contact__label sub-title jp__label"
-                    >メッセージ</label
-                  >
-                  <textarea
-                    id="message"
-                    name="message"
-                    class="contact__inputs"
-                    placeholder="現在のレベル、学びたいこと、希望日時など"
-                    required
-                  ></textarea>
-                </div>
+              <div class="contact__item">
+                <label for="name" class="contact__label sub-title jp__label"
+                  >名前</label
+                >
                 <input
-                  type="hidden"
-                  name="redirectTo"
-                  value="https://sfv2010.github.io/portfolio/confirmation"
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="contact__inputs"
+                  placeholder="お名前"
+                  required
                 />
-                <div class="contact__btn">
-                  <button type="submit" class="btn reverse-slid-bg">
-                    送信する
-                  </button>
-                </div>
-              </form>
-            </section>
-          </div>
-        </main>
+              </div>
+              <div class="contact__item">
+                <label for="email" class="contact__label sub-title jp__label"
+                  >メール</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="contact__inputs"
+                  placeholder="メールアドレス"
+                  required
+                />
+              </div>
+              <div class="contact__item">
+                <label for="message" class="contact__label sub-title jp__label"
+                  >メッセージ</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  class="contact__inputs"
+                  placeholder="現在のレベル、学びたいこと、希望日時など"
+                  required
+                ></textarea>
+              </div>
+              <input
+                type="hidden"
+                name="redirectTo"
+                value="https://sfv2010.github.io/portfolio/confirmation"
+              />
+              <div class="contact__btn">
+                <button type="submit" class="btn reverse-slid-bg">
+                  送信する
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
 
-        <footer class="footer">
-          <div class="footer__container">
-            <img
-              src="img/logo-sayaka-footer.png"
-              alt="Sayaka 日本語レッスンのロゴ"
-              class="logo"
-            />
+      <footer class="footer">
+        <div class="footer__container">
+          <img
+            src="img/logo-sayaka-footer-v3.webp"
+            alt="Sayaka 日本語レッスンのロゴ"
+            class="logo"
+            width="560"
+            height="219"
+            loading="lazy"
+            decoding="async"
+          />
 
-            <nav class="footer__nav">
-              <ul class="footer__ul">
-                <li><a class="footer__li" href="#">トップ</a></li>
-                <li><a class="footer__li" href="#about">講師</a></li>
-                <li><a class="footer__li" href="#works">レッスン</a></li>
-                <li><a class="footer__li" href="#contact">お問い合わせ</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="footer__copylight">&copy; Sayaka</div>
-        </footer>
-      </div>
-
-      <nav class="menuMobile">
-        <ul class="menuMobile__main">
-          <li class="menuMobile__item">
-            <a href="jp.html?lang=jp" class="menuMobile__link">
-              <span class="menu-title">トップ</span>
-            </a>
-          </li>
-          <li class="menuMobile__item">
-            <a href="#about" class="menuMobile__link">
-              <span class="menu-title">講師</span>
-            </a>
-          </li>
-          <li class="menuMobile__item">
-            <a href="#works" class="menuMobile__link">
-              <span class="menu-title">レッスン</span>
-            </a>
-          </li>
-          <li class="menuMobile__item">
-            <a href="index.html?lang=fr" class="menuMobile__link">
-              <span class="menu-title">Français</span>
-            </a>
-          </li>
-          <li class="menuMobile__item">
-            <a href="#contact" class="menuMobile__link">
-              <span class="menu-title">お問い合わせ</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+          <nav class="footer__nav">
+            <ul class="footer__ul">
+              <li><a class="footer__li" href="#">トップ</a></li>
+              <li><a class="footer__li" href="#about">講師</a></li>
+              <li><a class="footer__li" href="#works">レッスン</a></li>
+              <li><a class="footer__li" href="#contact">お問い合わせ</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__copylight">&copy; Sayaka</div>
+      </footer>
     </div>
 
+    <nav class="menuMobile">
+      <ul class="menuMobile__main">
+        <li class="menuMobile__item">
+          <a href="jp.html?lang=jp" class="menuMobile__link">
+            <span class="menu-title">トップ</span>
+          </a>
+        </li>
+        <li class="menuMobile__item">
+          <a href="#about" class="menuMobile__link">
+            <span class="menu-title">講師</span>
+          </a>
+        </li>
+        <li class="menuMobile__item">
+          <a href="#works" class="menuMobile__link">
+            <span class="menu-title">レッスン</span>
+          </a>
+        </li>
+        <li class="menuMobile__item">
+          <a href="index.html?lang=fr" class="menuMobile__link">
+            <span class="menu-title">Français</span>
+          </a>
+        </li>
+        <li class="menuMobile__item">
+          <a href="#contact" class="menuMobile__link">
+            <span class="menu-title">お問い合わせ</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
     <script src="scripts/mobile.js"></script>
     <script src="scripts/scroll.js"></script>
     <script src="scripts/textAnimation.js"></script>

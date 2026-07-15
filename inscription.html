@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <title>Inscription après le cours d'essai | Sayaka</title>
+    <meta
+      name="description"
+      content="Page d'inscription réservée aux élèves ayant effectué un cours d'essai avec Sayaka."
+    />
+    <link rel="icon" href="img/icon-sayaka-48.png" type="image/png" sizes="48x48" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&amp;display=swap"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&amp;display=swap" /></noscript>
+    <link rel="stylesheet" href="./css/style.min.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="menuMobile__cover"></div>
+
+      <header class="header">
+        <div class="header__inner">
+          <img
+            src="img/logo-sayaka-header-v2.webp"
+            alt="Logo Sayaka, cours de japonais"
+            class="header__logo"
+            width="204"
+            height="204"
+          />
+          <p class="header__title">
+            Cours de japonais <br /><span>avec Sayaka</span>
+          </p>
+
+          <nav class="header__nav" aria-label="Navigation principale">
+            <ul class="header__ul">
+              <li><a class="header__li" href="index.html">Accueil</a></li>
+              <li><a class="header__li" href="index.html#about">Professeur</a></li>
+              <li><a class="header__li" href="index.html#works">Cours</a></li>
+            </ul>
+            <div class="header__btn">
+              <a class="header__a btn reverse-slid-bg" href="index.html#contact">Contact</a>
+            </div>
+          </nav>
+
+          <button class="menuMobile__btn" aria-label="Ouvrir ou fermer le menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </header>
+
+      <main class="payment-page">
+        <div class="payment-page__container">
+          <p class="payment-page__eyebrow">Espace élève</p>
+          <h1>Inscription après votre cours d'essai</h1>
+          <p class="payment-page__intro">
+            Cette page est réservée aux élèves ayant déjà effectué un cours
+            d'essai avec Sayaka. Choisissez la formule convenue ensemble pour
+            accéder au paiement sécurisé par Stripe.
+          </p>
+
+          <div class="payment-page__notice" data-payment-setup-notice role="status">
+            Les liens de paiement ne sont pas encore activés. Merci de contacter
+            Sayaka avant d'utiliser cette page.
+          </div>
+
+          <div class="payment-page__grid">
+            <article class="payment-card">
+              <h2>Cours pour tout-petits</h2>
+              <p>Jeux, chansons et échanges simples pour découvrir le japonais avec plaisir.</p>
+              <div class="payment-card__options">
+                <a class="payment-card__button" data-payment-link="toddlersSingle">
+                  <span>1 cours · 15 min</span><strong>15 €</strong>
+                </a>
+              </div>
+            </article>
+
+            <article class="payment-card">
+              <h2>Cours de japonais pour tous</h2>
+              <p>Conversation, grammaire, lecture et culture japonaise.</p>
+              <div class="payment-card__options">
+                <a class="payment-card__button" data-payment-link="generalSingle">
+                  <span>1 cours · 50 min</span><strong>25 €</strong>
+                </a>
+                <a class="payment-card__button payment-card__button--pack" data-payment-link="generalPack">
+                  <span>Pack de 5 cours</span><strong>100 €</strong><small>1 cours offert</small>
+                </a>
+              </div>
+            </article>
+
+            <article class="payment-card">
+              <h2>Tout-petits et enfants</h2>
+              <p>Un cours ludique adapté à l'âge, au niveau et aux intérêts de l'enfant.</p>
+              <div class="payment-card__options">
+                <a class="payment-card__button" data-payment-link="childrenSingle">
+                  <span>1 cours · 25 min</span><strong>20 €</strong>
+                </a>
+                <a class="payment-card__button payment-card__button--pack" data-payment-link="childrenPack">
+                  <span>Pack de 5 cours</span><strong>80 €</strong><small>1 cours offert</small>
+                </a>
+              </div>
+            </article>
+
+            <article class="payment-card">
+              <h2>Conversation et prononciation</h2>
+              <p>Prononciation, rythme, écoute et pratique de l'expression orale.</p>
+              <div class="payment-card__options">
+                <a class="payment-card__button" data-payment-link="conversationSingle">
+                  <span>1 cours · 25 min</span><strong>15 €</strong>
+                </a>
+              </div>
+            </article>
+
+            <article class="payment-card">
+              <h2>Cours de soroban</h2>
+              <p>Nombres en japonais, calcul mental et exercices progressifs.</p>
+              <div class="payment-card__options">
+                <a class="payment-card__button" data-payment-link="sorobanSingle">
+                  <span>1 cours de soroban</span><strong>20 €</strong>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <p class="payment-page__help">
+            Une question avant le paiement ?
+            <a href="index.html#contact">Contactez Sayaka</a>.
+          </p>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__container">
+          <a href="index.html" class="footer__logo-link" aria-label="Accueil">
+            <img
+              src="img/logo-sayaka-footer-v3.webp"
+              alt="Sayaka – Cours de japonais"
+              class="logo"
+              width="560"
+              height="219"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <nav class="footer__nav" aria-label="Navigation du pied de page">
+            <ul class="footer__ul">
+              <li><a class="footer__li" href="index.html">Accueil</a></li>
+              <li><a class="footer__li" href="index.html#about">Professeur</a></li>
+              <li><a class="footer__li" href="index.html#works">Cours</a></li>
+              <li><a class="footer__li" href="index.html#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <nav class="footer__legal" aria-label="Informations légales">
+            <ul class="footer__legal-list">
+              <li><a href="mentions-legales.html">Mentions légales</a></li>
+              <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+              <li><a href="politique-cookies.html">Politique relative aux cookies</a></li>
+              <li><button type="button" class="footer__cookie-settings" data-open-cookie-settings>Gérer mes cookies</button></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__siret">SIRET : 944 969 559 00011</div>
+        <div class="footer__copyright">
+          &copy; <span id="current-year"></span> Sayaka. Tous droits réservés.
+        </div>
+      </footer>
+    </div>
+
+    <nav class="menuMobile" aria-label="Navigation mobile">
+      <ul class="menuMobile__main">
+        <li class="menuMobile__item"><a href="index.html" class="menuMobile__link"><span class="menu-title">Accueil</span></a></li>
+        <li class="menuMobile__item"><a href="index.html#about" class="menuMobile__link"><span class="menu-title">Professeur</span></a></li>
+        <li class="menuMobile__item"><a href="index.html#works" class="menuMobile__link"><span class="menu-title">Cours</span></a></li>
+        <li class="menuMobile__item"><a href="index.html#contact" class="menuMobile__link"><span class="menu-title">Contact</span></a></li>
+      </ul>
+    </nav>
+
+    <script src="scripts/mobile.js"></script>
+    <script src="scripts/payments.js"></script>
+    <script src="scripts/time.js"></script>
+    <script src="scripts/cookies.js"></script>
+  </body>
+</html>

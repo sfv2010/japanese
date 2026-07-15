@@ -16,4 +16,24 @@ document.addEventListener("DOMContentLoaded", function () {
         el.classList.toggle("show", inview);
     };
     const so3 = new ScrollObserver(".scroll-fadein", fadeInAnimation);
+
+    const flowItems = document.querySelectorAll(".flow__item");
+    flowItems.forEach((item) => item.classList.add("flow-reveal"));
+
+    if (flowItems.length) {
+        const revealFlowItem = function (el, inview) {
+            if (inview) {
+                el.classList.add("flow-visible");
+            }
+        };
+
+        const flowObserver = new ScrollObserver(
+            ".flow-reveal",
+            revealFlowItem,
+            {
+                rootMargin: "0px 0px -8% 0px",
+                threshold: 0.12,
+            },
+        );
+    }
 });
